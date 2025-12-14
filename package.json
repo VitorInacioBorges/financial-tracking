@@ -1,0 +1,30 @@
+{
+  "name": "financial-tracking",
+  "version": "1.0.0",
+  "description": "financial control API that tracks all your transactions",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VitorInacioBorges/financial-tracking.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VitorInacioBorges/financial-tracking/issues"
+  },
+  "homepage": "https://github.com/VitorInacioBorges/financial-tracking#readme",
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1",
+    "jest": "^30.2.0",
+    "mongoose": "^9.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.11"
+  }
+}
