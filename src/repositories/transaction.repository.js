@@ -9,8 +9,12 @@ export default {
     return Transaction.find({ user: userId });
   },
 
+  findTransactionById(userId, id) {
+    return Transaction.find({ user: userId, id: id });
+  },
+
   findTransactionByType(userId, type) {
-    return Transaction.find({ user: userId, type });
+    return Transaction.find({ user: userId, type: type });
   },
 
   updateTransactionById(userId, id, data) {
