@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const transaction_schema = new mongoose.Schema({
+const transactionSchema = new mongoose.Schema({
   type: {
     type: Boolean,
     required: true,
