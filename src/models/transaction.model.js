@@ -11,6 +11,12 @@ const transaction_schema = new mongoose.Schema({
     required: true,
     trim: true,
   },
+
+  user: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "user",
+    required: true,
+  },
 });
 
 export default mongoose.model("transaction", transaction_schema);
