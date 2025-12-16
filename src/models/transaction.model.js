@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 const transactionSchema = new mongoose.Schema({
   type: {
-    type: Boolean,
+    type: Boolean, // 1 is Entrance of value and 0 is Exit of value
     required: true,
   },
 
