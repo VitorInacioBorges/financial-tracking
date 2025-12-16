@@ -2,41 +2,52 @@ import service from "../services/transaction.service.js";
 
 export default {
   async create(req, res, next) {
+    // ???
     try {
-      const user = await service.createTransaction(req.body);
-      res.status(201).json(user);
+      const transaction = await service.createTransaction({
+        ...req.body,
+        user: req.params.id || req.body.user,
+      });
+      res.status(201).json(transaction);
     } catch (error) {
       next(error);
     }
   },
 
   async list(req, res, next) {
+    // VVV
     try {
-      const users = await service.listTransactions(req.params.id);
-      res.status(200).json(users);
+      const transactions = await service.listTransactions(req.params.id);
+      res.status(200).json(transactions);
     } catch (error) {
       next(error);
     }
   },
 
   async filter(req, res, next) {
+    // VVV
     try {
-      const users = await service.listTransactionsByType(
+      const transactions = await service.listTransactionsByType(
         req.params.id,
-        req.body
+        req.body.type
       );
-      res.status(200).json(users);
+      res.status(200).json(transactions);
     } catch (error) {
       next(error);
     }
   },
 
   async update(req, res, next) {
+    // ???
     try {
-      const user = await service.updateTransaction(req.params.id);
+      const updatedTransaction = await service.updateTransaction(
+        req.params.id,
+        req.params.transactionId || req.body._id,
+        req.body
+      );
       res.status(200).send({
-        message: "Updated transaction succesfully",
-        updatedTransaction: user,
+        message: "Updated transaction successfully",
+        updatedTransaction,
       });
     } catch (error) {
       next(error);
@@ -44,11 +55,15 @@ export default {
   },
 
   async delete(req, res, next) {
+    // ???
     try {
-      const user = await service.deleteTransaction(req.params.id, req.body);
+      const deletedTransaction = await service.deleteTransaction(
+        req.params.id,
+        req.params.transactionId || req.body._id
+      );
       res.status(200).send({
-        message: "Deleted transaction succesfully",
-        deletedUser: user,
+        message: "Deleted transaction successfully",
+        deletedTransaction,
       });
     } catch (error) {
       next(error);
