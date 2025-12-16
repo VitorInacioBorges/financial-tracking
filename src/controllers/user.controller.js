@@ -1,0 +1,60 @@
+import user_service from "../services/user.service.js";
+
+export default {
+  async create(req, res, next) {
+    try {
+      const user = await user_service.createUser(req.body);
+      res.status(201).json(user);
+    } catch (error) {
+      // passes the error to the next app.use() function in app.js that accepts 4 parameters
+      next(error);
+    }
+  },
+
+  async delete(req, res, next) {
+    try {
+      await user_service.deleteUser(req.params.id);
+      res.status(204).send({ message: "User deleted." });
+    } catch (error) {
+      next(error);
+    }
+  },
+
+  async list(req, res, next) {
+    try {
+      const users = await user_service.listUsers();
+      res.json(users);
+    } catch (error) {
+      next(error);
+    }
+  },
+
+  async get(req, res, next) {
+    try {
+      const user = await user_service.getUser(req.params.id);
+      res.json(user);
+    } catch (error) {
+      next(error);
+    }
+  },
+
+  async update(req, res, next) {
+    try {
+      const user = await user_service.updateUser(req.params.id, req.body);
+      res
+        .status(200)
+        .send({ message: "Updated succesfully!", userUpdated: user });
+    } catch (error) {
+      next(error);
+    }
+  },
+
+  async login(req, res, next) {
+    try {
+      const result = await user_service.loginUser(req.body);
+      res.status(200).send({ message: "Login efected!", userInfo: result });
+    } catch (error) {
+      next(error);
+    }
+  },
+};
