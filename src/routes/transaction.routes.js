@@ -1,5 +1,5 @@
 import { Router } from "express";
-import controller from "../controllers/transaction.controller.js";
+import controller from "../controllers/transaction.controllers.js";
 import { ensureValidId } from "../middlewares/validate.middleware.js";
 import { authMiddleware, requireRole } from "../middlewares/auth.middleware.js";
 
@@ -13,4 +13,6 @@ router.get("/transactions/type/:id", authMiddleware(), controller.filter);
 
 router.put("/transaction/:id", authMiddleware(), controller.update);
 
-router.delete("/transaction/:id", authMiddleware(), controller.delete);;
+router.delete("/transaction/:id", authMiddleware(), controller.delete);
+
+export default router;

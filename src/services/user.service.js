@@ -1,6 +1,6 @@
-import repo from "../repositories/user.repository";
+import repo from "../repositories/user.repository.js";
 import { createError } from "../utils/error.utils.js";
-import { hashPassword, compareHashPassword } from "../utils/hash.utils";
+import { hashPassword, compareHashPassword } from "../utils/hash.utils.js";
 import { tokenGenerator } from "../utils/token.utils.js";
 
 function ensureValidInfo({ name, email, password }) {

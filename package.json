@@ -1,6 +1,7 @@
 {
   "name": "financial-tracking",
   "version": "1.0.0",
+  "type": "module",
   "description": "financial control API that tracks all your transactions",
   "main": "index.js",
   "scripts": {

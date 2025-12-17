@@ -1,4 +1,4 @@
-import createError from "../utils/error.utils.js";
+import { createError } from "../utils/error.utils.js";
 import { tokenValidation } from "../utils/token.utils.js";
 
 export function authMiddleware() {
