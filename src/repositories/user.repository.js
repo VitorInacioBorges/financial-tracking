@@ -22,6 +22,6 @@ export default {
   },
 
   deleteUserById(id) {
-    return User.findByIdAndDelete;
+    return User.findByIdAndDelete(id);
   },
 };

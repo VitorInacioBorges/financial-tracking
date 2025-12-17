@@ -10,7 +10,7 @@ export default {
   },
 
   findTransactionById(userId, id) {
-    return Transaction.find({ user: userId, id: id });
+    return Transaction.findOne({ user: userId, _id: id });
   },
 
   findTransactionByType(userId, type) {

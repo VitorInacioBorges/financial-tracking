@@ -61,7 +61,7 @@ export default {
     if (!updatedTransaction) {
       throw createError("Transaction not found.", 404);
     }
-    return updated;
+    return updatedTransaction;
   },
 
   async deleteTransaction(userId, id) {
@@ -72,6 +72,6 @@ export default {
     if (!deletedTransaction) {
       throw createError("Transaction not found.", 404);
     }
-    return transaction;
+    return deletedTransaction;
   },
 };

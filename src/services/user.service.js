@@ -44,7 +44,7 @@ export default {
       throw createError("User not found.", 404);
     }
 
-    const validatePassword = compareHashedPassword(
+    const validatePassword = compareHashPassword(
       data.password,
       userDatabase.password
     );
@@ -105,7 +105,9 @@ export default {
       throw createError("No field completed for updating.", 400);
     }
 
-    payload.password = hashPassword(payload.password);
+    if (payload.password) {
+      payload.password = hashPassword(payload.password);
+    }
 
     const updated = await repo.updateUserById(id, payload);
     if (!updated) {
