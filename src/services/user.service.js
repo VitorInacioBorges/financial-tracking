@@ -14,7 +14,7 @@ export default {
   async createUser(data) {
     ensureValidInfo(data);
 
-    const emailExists = await repo.findByEmail(data.email);
+    const emailExists = await repo.findUserByEmail(data.email);
     if (emailExists) {
       throw createError("Email already registered.", 409);
     }
@@ -82,7 +82,7 @@ export default {
         throw createError("Invalid email", 400);
       }
       // checks to see if the new email already exists and it's not the same as the old one
-      const existing = await repo.findByEmail(payload.email);
+      const existing = await repo.findUserByEmail(payload.email);
       if (existing && existing.id !== id) {
         throw createError("Email already registered.", 409);
       }

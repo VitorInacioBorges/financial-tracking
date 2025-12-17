@@ -6,8 +6,8 @@ import errorMiddleware from "./middlewares/error.middleware.js";
 const app = express();
 
 app.use(express.json());
-app.use("api", userRoutes);
-app.use("api", transactionRoutes);
+app.use("/api", userRoutes);
+app.use("/api", transactionRoutes);
 app.use(errorMiddleware);
 
 export default app;

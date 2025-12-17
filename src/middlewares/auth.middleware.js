@@ -35,3 +35,5 @@ export function requireRole(...allowedRoles) {
     next();
   };
 }
+
+export function searchUser() {}

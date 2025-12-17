@@ -1,0 +1,12 @@
+TODO: POST   /api/user
+TODO: POST   /api/user/login
+TODO: GET    /api/users       --> token    --> admin role
+TODO: GET    /api/user/:id    --> token
+TODO: PUT    /api/users/:id   --> token
+TODO: DELETE /api/users/:id   --> token    --> admin role
+
+TODO: POST   /api/transactions/:id        --> token
+TODO: GET    /api/transactions/:id        --> token
+TODO: GET    /api/transactions/type/:id   --> token
+TODO: PUT    /api/transaction/:id         --> token
+TODO: DELETE /api/transaction/:id         --> token

@@ -2,7 +2,7 @@ export default function errorMiddleware(err, req, res, next) {
   const status = err.statusCode || 500;
   const message = status === 500 ? "Internal server error!" : err.message;
 
-  if ((status = 500)) {
+  if (status === 500) {
     console.error("[ERROR]", err);
   }
 
