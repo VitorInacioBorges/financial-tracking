@@ -32,7 +32,7 @@ export default {
     if (!userId) throw createError("User ID is required", 400);
     if (type === undefined || type === null)
       throw createError("Type cannot be blank", 400);
-    return await repo.filterTransactionByType(userId, type);
+    return await repo.findTransactionByType(userId, type);
   },
 
   async updateTransaction(userId, id, data) {

@@ -2,7 +2,6 @@ import service from "../services/transaction.service.js";
 
 export default {
   async create(req, res, next) {
-    // ???
     try {
       const transaction = await service.createTransaction({
         ...req.body,
@@ -15,7 +14,6 @@ export default {
   },
 
   async list(req, res, next) {
-    // VVV
     try {
       const transactions = await service.listTransactions(req.params.id);
       res.status(200).json(transactions);
@@ -25,7 +23,6 @@ export default {
   },
 
   async filter(req, res, next) {
-    // VVV
     try {
       const transactions = await service.listTransactionsByType(
         req.params.id,
@@ -38,7 +35,6 @@ export default {
   },
 
   async update(req, res, next) {
-    // ???
     try {
       const updatedTransaction = await service.updateTransaction(
         req.params.id,
@@ -55,7 +51,6 @@ export default {
   },
 
   async delete(req, res, next) {
-    // ???
     try {
       const deletedTransaction = await service.deleteTransaction(
         req.params.id,

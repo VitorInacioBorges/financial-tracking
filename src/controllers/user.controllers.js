@@ -14,7 +14,7 @@ export default {
   async delete(req, res, next) {
     try {
       await user_service.deleteUser(req.params.id);
-      res.status(204).send({ message: "User deleted." });
+      res.status(204).json({ message: "User deleted." });
     } catch (error) {
       next(error);
     }

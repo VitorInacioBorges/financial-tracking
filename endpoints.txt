@@ -1,12 +1,17 @@
-TODO: POST   /api/user
-TODO: POST   /api/user/login
-TODO: GET    /api/users       --> token    --> admin role
-TODO: GET    /api/user/:id    --> token
-TODO: PUT    /api/users/:id   --> token
-TODO: DELETE /api/users/:id   --> token    --> admin role
+    POST   /api/user
+    POST   /api/user/login
+    GET    /api/users       --> token    --> admin role
+    GET    /api/user/:id    --> token
+    PUT    /api/users/:id   --> token
+    DELETE /api/users/:id   --> token    --> admin role
 
-TODO: POST   /api/transactions/:id        --> token
-TODO: GET    /api/transactions/:id        --> token
-TODO: GET    /api/transactions/type/:id   --> token
-TODO: PUT    /api/transaction/:id         --> token
-TODO: DELETE /api/transaction/:id         --> token
+    POST   /api/transactions/:id        --> token
+    GET    /api/transactions/:id        --> token
+    GET    /api/transactions/type/:id   --> token
+    PUT    /api/transaction/:id         --> token
+    DELETE /api/transaction/:id         --> token
+
+--------------------------------------------------------------
+
+TODO: PUT user    --> atualiza, mas não retorna no json o usuario atualizado e sim o antigo
+TODO: DELETE user --> não retorna nada no json apenas apaga
