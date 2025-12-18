@@ -12,7 +12,7 @@ describe("when we try to search an user by it's ID", () => {
     };
 
     const createdUser = await userModel.create(user);
-    const foundUser = await userRepository.findById(createdUser._id);
+    const foundUser = await userRepository.findUserById(createdUser._id);
 
     expect(foundUser).toBeDefined();
     expect(foundUser._id.toString()).toBe(createdUser._id.toString());

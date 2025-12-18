@@ -10,7 +10,7 @@ describe("when we try to search an user by it's email", () => {
     };
 
     const createdUser = await userModel.create(user);
-    const foundUser = await userRepository.findByEmail(createdUser.email);
+    const foundUser = await userRepository.findUserByEmail(createdUser.email);
 
     expect(foundUser).toBeDefined();
     expect(foundUser.email).toBe(createdUser.email.toLowerCase());

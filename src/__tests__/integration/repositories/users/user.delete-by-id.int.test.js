@@ -10,7 +10,7 @@ describe("when trying to delete an user", () => {
     };
 
     const created_user = await userModel.create(user);
-    const deleted_user = await userRepository.deleteById(created_user._id);
+    const deleted_user = await userRepository.deleteUserById(created_user._id);
     const found_user = await userModel.findOne(deleted_user);
 
     expect(created_user).toBeDefined();

@@ -10,7 +10,7 @@ describe("when trying to create an user", () => {
     };
 
     const model_created_user = await userModel.create(user);
-    const repository_created_user = await userRepository.create(user);
+    const repository_created_user = await userRepository.createUser(user);
 
     expect(repository_created_user.email).toBe(
       model_created_user.email.toLowerCase()

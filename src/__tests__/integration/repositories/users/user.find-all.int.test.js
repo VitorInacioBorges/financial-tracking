@@ -17,7 +17,7 @@ describe("when trying to find all user", () => {
 
     const created_user1 = await userModel.create(user1);
     const created_user2 = await userModel.create(user2);
-    const all_users = await userRepository.findAll();
+    const all_users = await userRepository.findAllUsers();
 
     expect(Array.isArray(all_users)).toBe(true);
 

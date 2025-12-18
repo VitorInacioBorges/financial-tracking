@@ -18,7 +18,7 @@ describe("when trying to update an user", () => {
       password: "password123",
     };
 
-    const updated_user = await userRepository.updateById(
+    const updated_user = await userRepository.updateUserById(
       created_user._id,
       newUser
     );
